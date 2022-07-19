@@ -35,7 +35,8 @@ const routes: Routes = [
 {
   path:'products',
   component:ProductsComponent,
-  canActivate:[AuthGuardGuard],
+  // canActivate:[AuthGuardGuard],
+  canActivateChild:[ChildGuardGuard],
   children:[
     {
       path:'view-products',
