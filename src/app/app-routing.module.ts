@@ -4,8 +4,13 @@ import { AboutComponent} from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuardGuard } from './auth-guard.guard';
-import { RoleGuardGuard } from './role-guard.guard';
+import { AuthGuardGuard } from './authguard/auth-guard.guard';
+import { RoleGuardGuard } from './authguard/role-guard.guard';
+import { ProductsComponent } from './products/products.component';
+import { ViewProductsComponent } from './view-products/view-products.component';
+import { AddProductsComponent } from './add-products/add-products.component';
+import { DeactivateGuardGuard } from './authguard/deactivate-guard.guard';
+import { ChildGuardGuard } from './authguard/child-guard.guard';
 
 const routes: Routes = [
 {
@@ -26,6 +31,23 @@ const routes: Routes = [
   path:'dashboard',
   component:DashboardComponent,
   canActivate:[RoleGuardGuard]
+},
+{
+  path:'products',
+  component:ProductsComponent,
+  canActivate:[AuthGuardGuard],
+  children:[
+    {
+      path:'view-products',
+      component:ViewProductsComponent, 
+      canActivate:[RoleGuardGuard],      
+    },
+    {
+      path:'add-products',
+      component:AddProductsComponent,
+      canDeactivate:[DeactivateGuardGuard]
+    }
+  ]
 }
 ];
 

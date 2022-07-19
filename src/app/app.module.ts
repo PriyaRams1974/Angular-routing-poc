@@ -7,6 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
+import { ProductsComponent } from './products/products.component';
+import { AddProductsComponent } from './add-products/add-products.component';
+import { ViewProductsComponent } from './view-products/view-products.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     DashboardComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    ProductsComponent,
+    AddProductsComponent,
+    ViewProductsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

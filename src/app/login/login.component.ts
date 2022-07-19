@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
    token : any = 'tokenAny';
-   role : any = 'admin';
+   role : any = 'user';
   constructor(private router:Router) { }
 
   ngOnInit(): void {
