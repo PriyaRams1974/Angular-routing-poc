@@ -11,6 +11,8 @@ import { ViewProductsComponent } from './view-products/view-products.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { DeactivateGuardGuard } from './authguard/deactivate-guard.guard';
 import { ChildGuardGuard } from './authguard/child-guard.guard';
+import { ResolveGuardGuard } from './authguard/resolve-guard.guard';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
 {
@@ -21,6 +23,9 @@ const routes: Routes = [
   path:'home',
   component:HomeComponent,
   canActivate:[AuthGuardGuard]
+  // resolve: {
+  //   data : ResolveGuardGuard //should have the keyword data
+  // }
 },
 {
   path:'about',
@@ -49,7 +54,14 @@ const routes: Routes = [
       canDeactivate:[DeactivateGuardGuard]
     }
   ]
-}
+},
+{
+  path:'settings',
+  component:SettingsComponent,
+  resolve: {
+    data : ResolveGuardGuard //should have the keyword data
+  }
+},
 ];
 
 @NgModule({

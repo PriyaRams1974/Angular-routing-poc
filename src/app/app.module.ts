@@ -11,6 +11,7 @@ import { ProductsComponent } from './products/products.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { ViewProductsComponent } from './view-products/view-products.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     ProductsComponent,
     AddProductsComponent,
-    ViewProductsComponent
+    ViewProductsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
